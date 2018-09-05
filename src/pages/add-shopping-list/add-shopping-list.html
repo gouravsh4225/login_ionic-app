@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title text-center>Add Shopping List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="ItemGroup" (ngSubmit)="AddItem()">
+  <ion-item>
+    <ion-label floating>Item Name  </ion-label>
+<ion-input type="text" formControlName="ItemName"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Item Number  </ion-label>
+      <ion-input type="Number" formControlName="ItemNumber"></ion-input>
+  </ion-item>
+  <!-- <button ion-button block type="submit" [disabled]="!ItemGroup.valid">Add Item</button> -->
+  <!-- <button ion-button block (click)="update(ItemGroup)">Update</button> -->
+  </form>
+
+<button ion-button block (click)="checkdata()">Check Data</button>
+<button ion-button  color="secondary" (click)="navigatetoAutocomplete()">Back TO Shopping</button>
+<button ion-button color="light" (click)="NaviagteToMap()">Go to Map</button>
+
+ <ion-list>
+  <ion-item *ngFor="let myPerson of myPerson">
+    <ion-label>
+      {{myPerson.name}}
+    </ion-label>
+  </ion-item>
+
+</ion-list> 
+
+
+</ion-content>
+
